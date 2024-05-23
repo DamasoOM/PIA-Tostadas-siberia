@@ -411,3 +411,4 @@ $(document).ready(function() {
 
     loadInventory();
 });
+
