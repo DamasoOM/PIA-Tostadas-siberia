@@ -171,8 +171,8 @@ $(document).ready(function() {
 
 $(document).ready(function() {
     // Inicializar Supabase
-    const SUPABASE_URL = 'https://xyzcompany.supabase.co'; // Aqui poones la  URL de Supabase
-    const SUPABASE_KEY = 'public-anon-key'; // Reemplaza con la clave de Supabase
+    const SUPABASE_URL = 'https://xyzcompany.supabase.co'; // Reemplaza con tu URL de Supabase
+    const SUPABASE_KEY = 'public-anon-key'; // Reemplaza con tu clave de Supabase
     const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
     async function loadProducts() {
@@ -237,6 +237,29 @@ $(document).ready(function() {
         loadProducts();
     });
 
+    $('#addProductBtn').click(function() {
+        $('#addProductModal').modal('show');
+    });
+
+    $('#addProductForm').submit(async function(e) {
+        e.preventDefault();
+        const name = $('#addProductName').val();
+        const category = $('#addProductCategory').val();
+        const price = $('#addProductPrice').val();
+        const recipe = $('#addProductRecipe').val();
+
+        const { data, error } = await supabase
+            .from('products')
+            .insert([{ name, category, price, recipe }]);
+
+        if (error) {
+            console.error('Error adding product:', error);
+            return;
+        }
+
+        $('#addProductModal').modal('hide');
+        loadProducts();
+    });
+
     loadProducts();
 });
-
