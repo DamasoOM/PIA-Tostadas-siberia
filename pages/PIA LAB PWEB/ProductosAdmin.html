@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin - Adquisiciones</title>
+    <title>Admin - Productos</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="cssadmin/inicioadmin.css">
 </head>
-<body class="body.2">
+<body>
     <div class="container-fluid">
         <div class="row">
             <nav class="col-md-2 d-none d-md-block bg-light sidebar">
@@ -60,26 +60,63 @@
 
             <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">Adquisiciones</h1>
+                    <h1 class="h2">Productos</h1>
+                    <button class="btn btn-primary" id="addProductBtn">Agregar</button>
                 </div>
 
                 <div class="table-responsive">
                     <table class="table table-striped table-sm">
                         <thead>
                             <tr>
-                                <th>No. orden</th>
-                                <th>Proveedor</th>
-                                <th>Fecha de entrega</th>
-                                <th>Detalles</th>
-                                <th>Costo</th>
+                                <th>Producto</th>
+                                <th>Categoría</th>
+                                <th>Precio unitario</th>
+                                <th>Receta</th>
+                                <th>Acciones</th>
                             </tr>
                         </thead>
-                        <tbody id="acquisitionsTableBody">
-                            <!-- Las filas se llenarán automáticamente usando la API -->
+                        <tbody id="productsTableBody">
+                            <!-- Las filas se llenarán automáticamente usando la API que es la que nos falta -->
                         </tbody>
                     </table>
                 </div>
             </main>
+        </div>
+    </div>
+
+    
+    <div class="modal fade" id="editProductModal" tabindex="-1" aria-labelledby="editProductModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editProductModalLabel">Editar Producto</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="editProductForm">
+                        <input type="hidden" id="editProductId">
+                        <div class="form-group">
+                            <label for="editProductName">Nombre</label>
+                            <input type="text" class="form-control" id="editProductName">
+                        </div>
+                        <div class="form-group">
+                            <label for="editProductCategory">Categoría</label>
+                            <input type="text" class="form-control" id="editProductCategory">
+                        </div>
+                        <div class="form-group">
+                            <label for="editProductPrice">Precio unitario</label>
+                            <input type="number" class="form-control" id="editProductPrice">
+                        </div>
+                        <div class="form-group">
+                            <label for="editProductRecipe">Receta</label>
+                            <input type="text" class="form-control" id="editProductRecipe">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Guardar cambios</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 

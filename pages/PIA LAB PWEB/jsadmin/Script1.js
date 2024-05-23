@@ -168,3 +168,75 @@ $(document).ready(function() {
 
     loadAcquisitions();
 });
+
+$(document).ready(function() {
+    // Inicializar Supabase
+    const SUPABASE_URL = 'https://xyzcompany.supabase.co'; // Aqui poones la  URL de Supabase
+    const SUPABASE_KEY = 'public-anon-key'; // Reemplaza con la clave de Supabase
+    const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+    async function loadProducts() {
+        console.log("Llamada a la API para obtener los productos");
+
+        const { data: products, error } = await supabase
+            .from('products')
+            .select(`id, name, category, price, recipe`);
+
+        if (error) {
+            console.error('Error fetching products:', error);
+            return;
+        }
+
+        const productsTableBody = $('#productsTableBody');
+        productsTableBody.empty();
+
+        products.forEach(product => {
+            const row = `
+                <tr>
+                    <td>${product.name}</td>
+                    <td>${product.category}</td>
+                    <td>$${product.price.toFixed(2)}</td>
+                    <td>${product.recipe}</td>
+                    <td><button class="btn btn-sm btn-warning edit-btn" data-id="${product.id}">✏️</button></td>
+                </tr>
+            `;
+            productsTableBody.append(row);
+        });
+
+        $('.edit-btn').click(function() {
+            const id = $(this).data('id');
+            const product = products.find(prod => prod.id === id);
+            $('#editProductId').val(product.id);
+            $('#editProductName').val(product.name);
+            $('#editProductCategory').val(product.category);
+            $('#editProductPrice').val(product.price);
+            $('#editProductRecipe').val(product.recipe);
+            $('#editProductModal').modal('show');
+        });
+    }
+
+    $('#editProductForm').submit(async function(e) {
+        e.preventDefault();
+        const id = $('#editProductId').val();
+        const name = $('#editProductName').val();
+        const category = $('#editProductCategory').val();
+        const price = $('#editProductPrice').val();
+        const recipe = $('#editProductRecipe').val();
+
+        const { data, error } = await supabase
+            .from('products')
+            .update({ name, category, price, recipe })
+            .eq('id', id);
+
+        if (error) {
+            console.error('Error updating product:', error);
+            return;
+        }
+
+        $('#editProductModal').modal('hide');
+        loadProducts();
+    });
+
+    loadProducts();
+});
+
