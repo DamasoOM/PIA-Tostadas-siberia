@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compra - Tostadas El Cerro</title>
+    <link rel="stylesheet" href="css/style4.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img src="logo.png" alt="Tostadas El Cerro" class="logo">
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <h1>Compra</h1>
+            <div class="order-container">
+                <div class="order-left">
+                    <div class="order-type">
+                        <h2>Tipo de orden</h2>
+                        <div class="radio-group">
+                            <label>
+                                <input type="radio" name="orderType" checked>
+                                <span>A domicilio</span>
+                            </label>
+                            <div class="delivery-time">
+                                Entregar ahora
+                                <select>
+                                    <option>Entrega estimada: 35 min</option>
+                                </select>
+                            </div>
+                            <label>
+                                <input type="radio" name="orderType">
+                                <span>Para recoger</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="shipping-address">
+                        <h2>Dirección de envío</h2>
+                        <input type="text" placeholder="Calle">
+                        <input type="text" placeholder="Entre calles">
+                        <input type="text" placeholder="Número exterior">
+                        <input type="text" placeholder="Número interior">
+                        <input type="text" placeholder="Colonia">
+                        <input type="text" placeholder="Municipio">
+                        <input type="text" placeholder="Nuevo León" disabled>
+                        <input type="text" placeholder="Código postal">
+                        <input type="text" placeholder="Referencias de entrega">
+                        <div class="address-buttons">
+                            <a href="conocenos.html"><button class="cancel-button">Cancelar</button></a>
+                            <button class="save-button">Guardar</button>
+                        </div>
+                    </div>
+                    <div class="payment-method">
+                        <h2>Forma de pago</h2>
+                        <div class="radio-group">
+                            <label>
+                                <input type="radio" name="paymentMethod" checked>
+                                <span>Efectivo</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="paymentMethod">
+                                <span>Terminal inalámbrica al entregar</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-right">
+                    <div class="order-summary">
+                        <div class="item">
+
+                            <button class="remove-button">🗑️</button>
+                        </div>
+                        <div class="subtotal">
+                            <span>Subtotal</span>
+                            <span></span>
+                        </div>
+                        <div class="shipping-cost">
+                            <span>Costo de envío</span>
+                            <span></span>
+                        </div>
+                        <div class="total">
+                            <span>Subtotal</span>
+                            <span></span>
+                        </div>
+                        <button  class="continue-shopping"> <a href="index.html"> Seguir comprando</button></a>
+                        <button class="checkout-button">Subtotal</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Tostadas El Cerro. Todos los derechos reservados.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
