@@ -13,10 +13,12 @@
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
     "@mui/material": "^5.15.18",
+    "@supabase/supabase-js": "^2.43.4",
     "autoprefixer": "^10.4.19",
     "next": "14.2.3",
     "postcss": "^8.4.38",
     "react": "^18",
+    "react-bootstrap": "^2.10.2",
     "react-dom": "^18"
   },
   "devDependencies": {

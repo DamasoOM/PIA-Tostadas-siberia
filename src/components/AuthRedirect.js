@@ -10,7 +10,8 @@ const AuthRedirect = () => {
   useEffect(() => {
     if (!state.isAuthenticated) {
       router.push('/login'); // Redirigir a la página de inicio de sesión si no está autenticado
-    } else {
+    } 
+    else {
       router.push('/'); // Redirigir a la página de inicio si está autenticado
     }
   }, [state.isAuthenticated, router]);

@@ -12,8 +12,10 @@ export const GlobalStateProvider = ({ children }) => {
     role: null,
   });
 
+  const [cart, setCart] = useState([])
+
   return (
-    <GlobalStateContext.Provider value={{ state, setState }}>
+    <GlobalStateContext.Provider value={{ state, setState, cart, setCart }}>
       {children}
     </GlobalStateContext.Provider>
   );
