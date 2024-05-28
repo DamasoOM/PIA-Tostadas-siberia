@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tostadas El Cerro</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1><a href="index.html">TOSTADAS EL CERRO</a></h1>
+        <nav>
+            <ul>
+                <li><a href="Tostadas.html">TOSTADAS</a></li>
+                <li><a href="Tacos.html">TACOS Y ESCPECIALIDADES</a></li>
+                <li><a href="Consomé.html">CONSOMÉ</a></li>
+                <li><a href="Caldo.html">CALDO</a></li>
+                <li><a href="Arroz.html">ARROZ</a></li>
+                <li><a href="Bebidas.html">BEBIDAS Y MÁS</a></li>
+                <li><a href="CombosCliente.html">COMBOS</a></li>
+                <li><a href="conocenos.html">CONÓCENOS</a></li>
+                <li><a href="contacto.html">CONTACTO</a></li>
+            </ul>
+        </nav>
+        <div class="user-actions">
+            <a href="Inicio de sesión.html"><button>Iniciar sesión</button></a>
+            <a href="registro.html"><button>Registrarse</button> </a>
+            <a href="compra.html"><button>🛒</button></a>
+        </div>
+    </header>
+    <main class="luk">
+        <section class="menu">
+            
+            <h2></h2>
+            <div class="item">
+                <img src="Imagenes/tostada-especial.jpg" alt="Tostada Super">
+                <div class="item-details">
+                    <h3>TOSTADA SUPER</h3>
+                    <p>No necesita presentación, la clásica y deliciosa tostada con pollo deshebrado, aguacate y crema con mucha más porción y además  tapa chica.</p>
+                    <span class="price">$90.00</span>
+                    <button onclick="addToCart('Tostada Super', 90)">Agregar</button>
+                </div>
+            </div>
+            <h2></h2>
+            <div class="item">
+                <img src="Imagenes/tostada-especial.jpg" alt="Tostada Especial">
+                <div class="item-details">
+                    <h3>TOSTADA ESPECIAL</h3>
+                    <p>No necesita presentación, la clásica y deliciosa tostada con pollo deshebrado, aguacate y crema</p>
+                    <span class="price">$80.00</span>
+                    <button onclick="addToCart('Tostada Especial', 80)">Agregar</button>
+                </div>
+            </div>
+            <h2></h2>
+            <div class="item">
+                <img src="Imagenes/tostada-jr.jpg" alt="Tostada Junior">
+                <div class="item-details">
+                    <h3>TOSTADA JUNIOR</h3>
+                    <p>Si solo quieres un bocado, ¡esta tostada es para ti!</p>
+                    <span class="price">$50.00</span>
+                    <button onclick="addToCart('Tostada Junior', 50)">Agregar</button>
+                </div>
+            </div>
+        </section>
+
+            
+        
+        <aside class="cart">
+            <h2>Carrito</h2>
+            <ul id="cart-items"></ul>
+            <div class="cart-total">
+                <span>Subtotal:</span>
+                <span id="cart-total">$0.00</span>
+            </div>
+            <button id="confirm-order">Confirmar orden</button>
+        </aside>
+    </main>
+    <script src="js/script.js"></script>
+</body>
+</html>

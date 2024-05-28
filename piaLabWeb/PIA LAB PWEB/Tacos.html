@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tostadas El Cerro</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1><a href="index.html">TOSTADAS EL CERRO</a></h1>
+        <nav>
+            <ul>
+                <li><a href="Tostadas.html">TOSTADAS</a></li>
+                <li><a href="Tacos.html">TACOS Y ESCPECIALIDADES</a></li>
+                <li><a href="Consomé.html">CONSOMÉ</a></li>
+                <li><a href="Caldo.html">CALDO</a></li>
+                <li><a href="Arroz.html">ARROZ</a></li>
+                <li><a href="Bebidas.html">BEBIDAS Y MÁS</a></li>
+                <li><a href="CombosCliente.html">COMBOS</a></li>
+                <li><a href="conocenos.html">CONÓCENOS</a></li>
+                <li><a href="contacto.html">CONTACTO</a></li>
+            </ul>
+        </nav>
+        <div class="user-actions">
+            <a href="Inicio de sesión.html"><button>Iniciar sesión</button></a>
+            <a href="registro.html"><button>Registrarse</button> </a>
+            <a href="compra.html"><button>🛒</button></a>
+        </div>
+    </header>
+    <main class="luk">
+        
+        <section class="menu">
+            <h2></h2>
+            <div class="item">
+                <img src="Imagenes/Taco especial.jpg" alt="Taco Especial">
+                <div class="item-details">
+                    <h3>TACO ESPECIAL</h3>
+                    <p>Lo mejor de la tostada en un taco</p>
+                    <span class="price">$65.00</span>
+                    <button onclick="addToCart('Taco Especial', 65)">Agregar</button>
+                </div>
+            </div>
+            <h2></h2>
+            <div class="item">
+                <img src="Imagenes/TORTADEPIERNA-jpg.jpg" alt="Torta de pierna ">
+                <div class="item-details">
+                    <h3>TORTA DE PIERNA</h3>
+                    <p>Nada mejor que una torta de pierna con su pan, pierna de cerdo, mayonesa, lechuga, tomate y cebolla.</p>
+                    <span class="price">$55.00</span>
+                    <button onclick="addToCart('Torta de pierna', 55)">Agregar</button>
+                </div>
+            </div>
+            <h2></h2>
+            <div class="item">
+                <img src="Imagenes/ENCHILDAS SUIZAS.jpeg" alt="Enchiladas  suizas">
+                <div class="item-details">
+                    <h3>ENCHILADAS SUIZAS</h3>
+                    <p>Tortilla dorada y bañada en salsa verde con relleno de pollo, queso, crema y una pequeña porción de arroz.</p>
+                    <span class="price">$65.00</span>
+                    <button onclick="addToCart('Taco Especial', 65)">Agregar</button>
+                </div>
+            </div>
+            <!-- Añade más productos de Tacos aquí -->
+
+        </section>
+        
+        
+        <aside class="cart">
+            <h2>Carrito</h2>
+            <ul id="cart-items"></ul>
+            <div class="cart-total">
+                <span>Subtotal:</span>
+                <span id="cart-total">$0.00</span>
+            </div>
+            <button id="confirm-order">Confirmar orden</button>
+        </aside>
+    </main>
+    <script src="js/script.js"></script>
+</body>
+</html>
