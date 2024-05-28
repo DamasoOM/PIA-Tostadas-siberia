@@ -109,3 +109,7 @@ body {
     width: 30px;
     height: auto;
 }
+h1 a {
+    color: rgb(219, 69, 15); 
+    text-decoration: none; 
+}

@@ -294,3 +294,7 @@ aside ul li a {
     padding: 20px;
     border-radius: 5px;
 }
+h1 a {
+    color: rgb(219, 69, 15); 
+    text-decoration: none; 
+}

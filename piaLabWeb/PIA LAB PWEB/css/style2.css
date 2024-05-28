@@ -19,6 +19,7 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
+    
 }
 
 .header img {
@@ -96,4 +97,9 @@ body {
 
 .footer img {
     height: 30px;
+}
+
+h1 a {
+    color: rgb(219, 69, 15); 
+    text-decoration: none; 
 }
