@@ -9,6 +9,10 @@ const Checkout = () => {
     const { cart, setCart } = useContext(GlobalStateContext);
     const [total, setTotal] = useState(0)
     const [isPickup, setIsPickup] = useState(false)
+    const onNewOrder = async (order) => {
+        //const { data, error } = await supabase.from('orders').insert([order]);
+        //console.log(carrito"carrito")
+    }
 
     useEffect(()=>{
         const sumaTotal = cart.reduce((price, objeto) => {

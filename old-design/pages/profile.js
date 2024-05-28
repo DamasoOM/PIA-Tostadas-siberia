@@ -18,11 +18,12 @@ const Profile = () => {
         navigateTo('/')
     }
 
-    // useEffect(()=>{
-    //     if(state.role != "admin"){
-    //         navigateTo("/")
-    //     }
-    // },[])
+      // useEffect(()=>{
+      //     if(state.role != "admin"){
+      //         navigateTo("/")
+      //     }
+      // },[])
+       
     return(
         <main>
             <section id="mi-cuenta">

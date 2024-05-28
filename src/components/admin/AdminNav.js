@@ -70,11 +70,11 @@ const AdminNav = () => {
                                         <p className="text-black">Usuarios</p>
                                     </a>
                                 </li>
-                                {/* <li class="nav-item">
-                                    <a className={`nav-link ${activeTab == "/admin" ? "active" : ""}`} onClick={()=>navigateTo('/admin')}>
+                                <li class="nav-item">
+                                    <a className={`nav-link `} onClick={()=>navigateTo('/ ')}>
                                         Página principal
                                     </a>
-                                </li> */}
+                                </li>
                                 <li class="nav-item">
                                     <a className={`px-3`}>
                                         <button onClick={onLogout}><p className="text-red-500 font-semibold">Cerrar Sesión</p></button>
