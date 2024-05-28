@@ -22,7 +22,6 @@ import PersonIcon from '@mui/icons-material/Person';
 
 //Styles
 import { kPrimaryColor } from '@/app/_configuration/constants';
-import { link } from 'fs';
 
 
 //Main component content

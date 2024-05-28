@@ -12,8 +12,8 @@ import Toolbar from '@mui/material/Toolbar';
 
 
 //Components
-import Header from './_components/Header';
-import Navbar from './_components/Navbar';
+import Header from '../_components/Header';
+import Navbar from '../_components/Navbar';
 
 
 //Types
