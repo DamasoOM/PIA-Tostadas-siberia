@@ -1,7 +1,5 @@
 //Main component content
-const Page = (): JSX.Element => {
-
-
+const Navbar = (): JSX.Element => {
 	//Main component render
 	return (
 		<>
@@ -11,4 +9,4 @@ const Page = (): JSX.Element => {
 };
 
 
-export default Page; //Export main component
+export default Navbar; //Export main component

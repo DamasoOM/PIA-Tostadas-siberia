@@ -11,40 +11,32 @@ import type { ReactNode } from 'react';
 
 
 //Styles
-import '@fontsource/roboto/300.css';
-import '@fontsource/roboto/400.css';
-import '@fontsource/roboto/500.css';
-import '@fontsource/roboto/700.css';
-import { Roboto } from "next/font/google";
-const roboto = Roboto({
-  subsets: [
-    'latin',
-  ],
-  weight: [
-    '400',
-    '500',
-    '700'
-  ],
-});
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
+import { ThemeProvider } from '@mui/material/styles';
+import theme from '../theme';
 
 
 //Types
-type LayoutProps = {
+type RootLayoutProps = {
   readonly children: ReactNode;
 };
 
 
 //Main component content
-const Layout = ({children}: LayoutProps): JSX.Element => {
+const RootLayout = ({children}: RootLayoutProps): JSX.Element => {
   //Main component render
   return (
     <html lang='es' >
-      <body className={roboto.className}>
-        {children}
+      <body>
+        <AppRouterCacheProvider>
+          <ThemeProvider theme={theme} >
+            {children}
+          </ThemeProvider>
++       </AppRouterCacheProvider>
       </body>
     </html>
   );
 };
 
 
-export default Layout; //Export main component
+export default RootLayout; //Export main component
