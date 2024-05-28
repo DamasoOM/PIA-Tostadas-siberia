@@ -5,7 +5,7 @@ const Page = (): JSX.Element => {
 	//Main component render
 	return (
 		<>
-			
+			Addresses
 		</>
 	);
 };

@@ -1,4 +1,5 @@
 //NextJS
+'use client';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -16,10 +17,12 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 //Icons
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import PersonIcon from '@mui/icons-material/Person';
 
 
 //Styles
 import { kPrimaryColor } from '@/app/_configuration/constants';
+import { link } from 'fs';
 
 
 //Main component content
@@ -27,13 +30,17 @@ const Header = (): JSX.Element => {
 	//Main component render
 	return (
 		<AppBar
+			position='fixed'
+			elevation={1}
 			sx={{
 				backgroundColor: 'white',
+				zIndex: (theme) => theme.zIndex.drawer + 1,
 			}}
 		>
 			<Toolbar>
 				<Stack direction='row' alignItems='center' justifyContent='space-between' width='100%' >
-					<Stack direction='row' alignItems='center' >
+					<Stack direction='row' alignItems='center' component={Link}
+							href={Route.HOME} >
 						<Image
 							src='/assets/logo.png'
 							alt='Logo'
@@ -56,6 +63,9 @@ const Header = (): JSX.Element => {
 					</Stack>
 					<Stack direction='row' alignItems='center' gap={2.5} >
 						<Stack direction='row' alignItems='center' gap={4} >
+							<IconButton LinkComponent={Link} href={Route.MY_ACCOUNT_INFORMATION} >
+								<PersonIcon />
+							</IconButton>
 							<Button
 								variant='contained'
 								LinkComponent={Link}

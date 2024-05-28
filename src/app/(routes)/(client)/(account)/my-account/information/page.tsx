@@ -1,18 +1,16 @@
+//NextJS
+
 //MATERIAL DESIGN
-//Components
-import Container from '@mui/material/Container';
-import Stack from '@mui/material/Stack';
+//components
 
 
 //Main component content
 const Page = (): JSX.Element => {
 	//Main component render
 	return (
-		<Container>
-			<Stack>
-				a
-			</Stack>
-		</Container>
+		<>
+			Information
+		</>
 	);
 };
 
