@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tostadas El Cerro - Mi Cuenta</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>TOSTADAS EL CERRO</h1>
+        <nav>
+            <ul>
+                <li><a href="#">TOSTADAS</a></li>
+                <li><a href="#">TACOS</a></li>
+                <li><a href="#">CONSOMÉ</a></li>
+                <li><a href="#">CALDO</a></li>
+                <li><a href="#">ARROZ</a></li>
+                <li><a href="#">BEBIDAS Y MÁS</a></li>
+                <li><a href="#">COMBOS</a></li>
+                <li><a href="conocenos.html">CONÓCENOS</a></li>
+                <li><a href="contacto.html">CONTACTO</a></li>
+            </ul>
+        </nav>
+        <div class="user-actions">
+            <a href="Inicio de sesión.html"><button>Iniciar sesión</button></a>
+            <a href="registro.html"><button>Registrarse</button> </a>
+            <a href="compra.html"><button>🛒</button></a>
+        </div>
+    </header>
+    <main>
+        <section id="mi-cuenta">
+            <aside>
+                <h2>MI CUENTA</h2>
+                <ul>
+                    <li><a href="#" id="informacion-link">Información</a></li>
+                    <li><a href="#">Direcciones</a></li>
+                </ul>
+                <a href="#" id="logout-button">🔓</a>
+            </aside>
+            <div class="informacion">
+                <h2>Información</h2>
+                <form id="informacion-form">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre">
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido" name="apellido">
+                    <label for="telefono">Teléfono:</label>
+                    <input type="text" id="telefono" name="telefono">
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email">
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password" name="password">
+                    <label for="confirm-password">Confirmar Contraseña:</label>
+                    <input type="password" id="confirm-password" name="confirm-password">
+                    <div class="form-buttons">
+                        <button type="button" id="cancel-button">Cancelar</button>
+                        <button type="submit" id="save-button">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,9 +1,9 @@
 {
-  "name": "proweb-pia",
+  "name": "tostadas-siberia",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "types": "npx supabase gen types typescript --project-id \"veohsbknlmuhxjdzcdwm\" --schema public > ./src/app/_types/supabase.ts",
+    "types": "npx supabase gen types typescript --project-id \"veohsbknlmuhxjdzcdwm\" --schema public > types/supabase.ts",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -13,7 +13,9 @@
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
     "@mui/material": "^5.15.18",
+    "autoprefixer": "^10.4.19",
     "next": "14.2.3",
+    "postcss": "^8.4.38",
     "react": "^18",
     "react-dom": "^18"
   },
@@ -21,11 +23,8 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.3",
-    "postcss": "^8",
     "supabase": "^1.167.4",
-    "tailwindcss": "^3.4.1",
+    "tailwindcss": "^3.4.3",
     "typescript": "^5"
   }
 }
