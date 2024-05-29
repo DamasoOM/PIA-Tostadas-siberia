@@ -1,26 +1,20 @@
-//NextJS
-import Link from 'next/link';
-
-
 //ReactJS
 import { ReactNode } from 'react';
-
-
-import Route from '@/app/_configuration/routes';
 
 
 //MATERIAL DESIGN
 //Components
 import Box from '@mui/material/Box';
-import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
+import AppBar from '@mui/material/AppBar';
+import CssBaseline from '@mui/material/CssBaseline';
 import Toolbar from '@mui/material/Toolbar';
-import List from '@mui/material/List';
-import Typography from '@mui/material/Typography';
 
 
 //Components
-import DrawerListItemButton from './_components/DrawerListItemButton';
+import Header from '../../_components/Header';
+import Navbar from '../../_components/Navbar';
+import LayoutDrawer from './_components/LayoutDrawer';
 
 
 //Types
@@ -31,56 +25,22 @@ type LayoutProps = {
 
 //Main component content
 const Layout = ({children}: LayoutProps): JSX.Element => {
-
-	const drawerWidth = 600;
-
-	const listData = [
-		{
-			children: 'Información',
-			href: Route.MY_ACCOUNT_INFORMATION,
-		},
-		{
-			children: 'Direcciones',
-			href: Route.MY_ACCOUNT_ADDRESSES,
-		},
-	];
-
-	const listItems = listData.map( (data, index) => (
-		<DrawerListItemButton key={`client-my-account-layout-drawer-list-item-${index}`} href={data.href} >
-				{data.children}
-		</DrawerListItemButton>
-	) );
-
-
 	//Main component render
 	return (
-		<>
-			<Drawer
-				variant='permanent'
-				sx={{
-					flexShrink: 0,
-					width: drawerWidth,
-				}}
+		<Box display='flex' >
+			<CssBaseline />
+			<Header />
+			<Navbar />
+			<LayoutDrawer />
+			<Box
+				component='main'
+				flexGrow={1}
+				p={3}
 			>
-				<Toolbar
-					sx={{
-						height: 84,
-					}}
-				/>
-				<Toolbar>
-					<Typography variant='h6' >
-						Mi cuenta
-					</Typography>
-				</Toolbar>
-				<Divider />
-				<Box sx={{ overflow: 'auto' }} >
-					<List>
-						{listItems}
-					</List>
-				</Box>
-			</Drawer>
-			{children}
-		</>
+				<Toolbar sx={{ height: 84, }} />
+				{children}
+			</Box>
+		</Box>
 	);
 };
 

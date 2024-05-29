@@ -22,7 +22,7 @@ const SignInForm = (): JSX.Element => {
 		<Box component='form' action={signUpAction} >
 			<Stack gap={1} >
 				<Typography variant='h5' >
-					Iniciar sesión
+					Registrarse
 				</Typography>
 				<Stack gap={2} >
 					<TextField

@@ -112,6 +112,7 @@ export type Database = {
       }
       dishes: {
         Row: {
+          category: string | null
           description: string
           id: number
           name: string
@@ -119,6 +120,7 @@ export type Database = {
           recipe_id: number
         }
         Insert: {
+          category?: string | null
           description?: string
           id?: number
           name?: string
@@ -126,6 +128,7 @@ export type Database = {
           recipe_id: number
         }
         Update: {
+          category?: string | null
           description?: string
           id?: number
           name?: string

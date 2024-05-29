@@ -11,8 +11,15 @@ import { useState } from 'react';
 import TextField from '@mui/material/TextField';
 
 
+//Types
+type PasswordTextFieldProps = {
+	name?: string;
+	label?: string;
+};
+
+
 //Main component content
-const PasswordTextField = (): JSX.Element => {
+const PasswordTextField = ({name, label}: PasswordTextFieldProps): JSX.Element => {
 
 	const [ visible, setVisible ] = useState<boolean>(false);
 
@@ -21,9 +28,13 @@ const PasswordTextField = (): JSX.Element => {
 	return (
 		<TextField
 			required
-			name='password'
-			label='Contraseña'
+			name={name || 'password'}
+			label={label || 'Contraseña'}
 			type='password'
+
+			inputProps={{
+				
+			}}
 		/>
 	);
 };
