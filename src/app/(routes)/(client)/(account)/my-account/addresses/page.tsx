@@ -1,4 +1,9 @@
-import { supabase } from '@/utils/supabase';
+//NextJS
+import Link from 'next/link';
+
+
+import Route from '@/app/_configuration/routes';
+import supabase from '@/utils/supabase/client';
 
 
 //MATERIAL DESIGN
@@ -9,6 +14,10 @@ import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
 import List from '@mui/material/List';
+
+
+export const revalidate = 0;
+export const dynamic = 'force-dynamic';
 
 
 //Components
@@ -39,7 +48,6 @@ const Page = async (): Promise<JSX.Element> => {
 
 	const addresses = await getAddresses();
 
-
 	const listItems = addresses.map( (address, index) => (
 		<AddressListItemButton {...address} key={`my-account-addresses-address-list-item-${index}`} />
 	) );
@@ -56,13 +64,19 @@ const Page = async (): Promise<JSX.Element> => {
 				>
 					Direcciones
 				</Typography>
-				<Button>
+				<Button LinkComponent={Link} href={Route.MY_ACCOUNT_NEW_ADDRESS} >
 					Agregar dirección
 				</Button>
 				<Divider />
-				<List>
-
-				</List>
+				{listItems.length === 0 ? (
+					<Typography align='center' >
+						Sin direcciones guardadas
+					</Typography>
+				) : (
+					<List>
+						{listItems}
+					</List>
+				)}
 			</Stack>
 		</Container>
 	);

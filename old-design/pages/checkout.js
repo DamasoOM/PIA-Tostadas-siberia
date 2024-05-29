@@ -11,7 +11,7 @@ const Checkout = () => {
     const [isPickup, setIsPickup] = useState(false)
     const onNewOrder = async (order) => {
         //const { data, error } = await supabase.from('orders').insert([order]);
-        //console.log(carrito"carrito")
+        //console.log(carrito, "carrito")
     }
 
     useEffect(()=>{
