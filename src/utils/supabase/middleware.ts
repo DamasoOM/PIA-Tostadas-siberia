@@ -1,14 +1,7 @@
-import { createServerClient } from '@supabase/ssr'
-import { NextResponse } from 'next/server'
+import { createServerClient, type CookieOptions } from '@supabase/ssr'
+import { NextResponse, type NextRequest } from 'next/server'
 
-
-//Types
-import type { NextRequest } from 'next/server'
-import type { CookieOptions } from '@supabase/ssr'
-
-
-
-const updateSession = async (request: NextRequest) => {
+export async function updateSession(request: NextRequest) {
   let response = NextResponse.next({
     request: {
       headers: request.headers,
@@ -64,7 +57,4 @@ const updateSession = async (request: NextRequest) => {
   await supabase.auth.getUser()
 
   return response
-};
-
-
-export default updateSession;
+}

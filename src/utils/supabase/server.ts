@@ -1,20 +1,10 @@
-//NextJS
+import { createServerClient, type CookieOptions } from '@supabase/ssr'
 import { cookies } from 'next/headers'
 
-
-//Supabase
-import { createServerClient } from '@supabase/ssr'
-
-
-//Types
-import type { CookieOptions } from '@supabase/ssr'
-import type { Database } from '@/app/_types/supabase';
-
-
-function createClient() {
+export function createClient() {
   const cookieStore = cookies()
 
-  return createServerClient<Database>(
+  return createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
     {
@@ -43,10 +33,4 @@ function createClient() {
       },
     }
   )
-};
-
-
-const serverClient = createClient();
-
-
-export default serverClient;
+}

@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
 
-import { supabase } from '@/utils/supabase';
+import { createClient } from '@/utils/supabase/client';
 import Route from '@/app/_configuration/routes';
 
 
@@ -32,6 +32,8 @@ const AddressListItemButton = (props: AddressListItemButtonProps): JSX.Element =
 	const secondaryText = `${props.city}${props.state ? `, ${props.state}` : ''}`;
 
 	const onDeleteHandler = async () => {
+		const supabase = createClient();
+
 		const deleteQuery = supabase
 			.from('addresses')
 			.delete()

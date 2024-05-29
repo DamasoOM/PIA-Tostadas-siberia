@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 
 import Route from '@/app/_configuration/routes';
-import supabase from '@/utils/supabase/client';
+import { createClient } from '@/utils/supabase/client';
 
 
 //MATERIAL DESIGN
@@ -25,6 +25,8 @@ import AddressListItemButton from './_components/AddressListItemButton';
 
 
 const getAddresses = async () => {
+	const supabase = createClient();
+	
 	const selectQuery = supabase
 		.from('addresses')
 		.select();

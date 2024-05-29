@@ -28,9 +28,13 @@ const PasswordTextField = ({name, label}: PasswordTextFieldProps): JSX.Element =
 	return (
 		<TextField
 			required
-			name={name || 'name'}
+			name={name || 'password'}
 			label={label || 'Contraseña'}
 			type='password'
+
+			inputProps={{
+				
+			}}
 		/>
 	);
 };

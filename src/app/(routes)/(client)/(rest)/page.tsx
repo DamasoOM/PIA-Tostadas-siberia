@@ -1,4 +1,4 @@
-import { supabase } from '@/utils/supabase';
+import { createClient } from '@/utils/supabase/client';
 
 
 //MATERIAL DESIGN
@@ -18,6 +18,8 @@ export const dynamic = 'force-dynamic'
 
 
 const getData = async (category: string) => {
+	const supabase = createClient();
+	
 	const selectQuery = supabase
 		.from('dishes')
 		.select()

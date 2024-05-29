@@ -10,7 +10,7 @@ import Route from "@/app/_configuration/routes";
 
 
 //Supabase
-import serverClient from "@/utils/supabase/server";
+import { createClient } from "@/utils/supabase/server";
 
 
 //Types
@@ -22,9 +22,15 @@ type LayoutProps = {
 //Main component content
 const Layout = async ({children}: LayoutProps): Promise<JSX.Element> => {
 
-	const { data, error } = await serverClient.auth.getUser();
+	const supabase = createClient();
 
+	const { data, error } = await supabase.auth.getUser();
+
+	
 	if( error || !data?.user ){
+		console.info( error?.code );
+		console.info( error?.message );
+		console.info( error?.status );
 		redirect(Route.HOME);
 	}
 
